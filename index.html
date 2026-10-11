@@ -85,6 +85,13 @@ section{padding-block:clamp(3.5rem,9vw,6.5rem)}
 .sheet.flip .media{order:2}
 .media{display:grid;gap:.6rem}
 .media .duo{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.media .trio{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.trio .tall{grid-row:span 2;display:flex;flex-direction:column}
+.trio .tall img{flex:1;min-height:0;object-fit:cover}
+.trio img{aspect-ratio:4/3}
+.trio img[src*="oc_section"]{object-fit:contain}
+.trio .tall img{aspect-ratio:auto}
+.gripsec{max-width:24rem}
 .frame{border:1px solid var(--line);background:var(--sheet);padding:.45rem;margin:0}
 .frame img{width:100%;object-fit:cover}
 .frame figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);padding:.45rem .1rem 0;line-height:1.4}
@@ -234,9 +241,10 @@ section{padding-block:clamp(3.5rem,9vw,6.5rem)}
       <div class="sheet">
         <div class="media">
           <figure class="frame"><img src="img/oc_load.jpg" width="1000" height="562" alt="OpenCycloid actuator lifting a kettlebell on a lever during a load test, with spare cycloidal disks on stacked weight plates."><figcaption>Load test with weight plates</figcaption></figure>
-          <div class="duo">
+          <div class="trio">
+            <figure class="frame tall"><img src="img/oc_exploded.jpg" width="745" height="1020" alt="Exploded CAD render of OpenCycloid: output flange, bearing cap, cycloidal stage with ring pins, motor housing with brushless stator, mounting bracket and drive electronics, with fasteners spread out around them."><figcaption>Exploded view, Fusion 360</figcaption></figure>
             <figure class="frame"><img src="img/oc_section.jpg" width="900" height="848" alt="Color-coded CAD cross-section of OpenCycloid showing the brushless motor, two cycloidal disks and the output bearing."><figcaption>Cross-section, Fusion 360</figcaption></figure>
-            <figure class="frame"><img src="img/oc_stage.jpg" width="1200" height="675" alt="Hand holding the OpenCycloid cycloidal stage: a printed disk running on a ring of 6 mm pins around an eccentric bearing." style="aspect-ratio:900/848"><figcaption>Cycloidal stage on 6 mm ring pins</figcaption></figure>
+            <figure class="frame"><img src="img/oc_stage.jpg" width="1200" height="675" alt="Hand holding the OpenCycloid cycloidal stage: a printed disk running on a ring of 6 mm pins around an eccentric bearing." style="aspect-ratio:4/3"><figcaption>Cycloidal stage on 6 mm ring pins</figcaption></figure>
           </div>
         </div>
         <div class="copy">
@@ -279,6 +287,7 @@ section{padding-block:clamp(3.5rem,9vw,6.5rem)}
           </table>
           <div class="top" style="margin-top:.6rem"><h3 style="font-size:1.35rem">SimpleGripper</h3><span class="label">End effector · Aug 2024</span></div>
           <p class="muted">A two-degree-of-freedom parallel gripper with wrist rotation, driven by two 25 kg servos and Teensy 4.1 firmware.</p>
+          <figure class="frame gripsec"><img src="img/gripper_section.jpg" width="683" height="512" alt="Color-coded CAD section view of SimpleGripper v4 showing the two jaws and the internal mechanism."><figcaption>SimpleGripper v4, section view, Fusion 360</figcaption></figure>
           <div class="links">
             <a href="https://photos.app.goo.gl/DezPRVTqQKv4HEiD7" target="_blank" rel="noopener">First VR teleoperation test</a>
             <a href="https://www.instructables.com/SimpleGripper-an-Open-source-Parallel-Gripper-With/" target="_blank" rel="noopener">SimpleGripper build guide</a>
